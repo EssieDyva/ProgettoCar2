@@ -15,6 +15,7 @@ local.properties
 .project
 .classpath
 .launch
+sql.properties
 
 Maven
 target/
