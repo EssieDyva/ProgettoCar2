@@ -87,8 +87,8 @@ public class BiciDAO {
 						.map(row -> new Bici(
 								(Integer)row.get("id_bici"), 
 								(Integer)row.get("numeroMarce"), 
-								(String)row.get("tipoFreno"),
-								(String)row.get("tipoSospensione"),
+								(Integer)row.get("tipoFreno"),
+								(Integer)row.get("tipoSospensione"),
 								(Boolean)row.get("isPiegevole"))).collect(Collectors.toList());
 			}
 			
@@ -104,8 +104,8 @@ public class BiciDAO {
 				return Optional.ofNullable(new Bici(
 						(Integer)row.get("id_bici"), 
 						(Integer)row.get("numeroMarce"), 
-						(String)row.get("tipoFreno"),
-						(String)row.get("tipoSospensione"),
+						(Integer)row.get("tipoFreno"),
+						(Integer)row.get("tipoSospensione"),
 						(Boolean)row.get("isPiegevole")
 						));
 			}

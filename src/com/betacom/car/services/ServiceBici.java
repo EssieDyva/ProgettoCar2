@@ -84,7 +84,7 @@ public class ServiceBici {
 	
 	private void createBici(int idVeicolo) throws Exception {
 		System.out.println("insert into Bici*****");
-		Bici bici = new Bici(idVeicolo, 6, "tamburo", "mono", true);
+		Bici bici = new Bici(idVeicolo, 6, 1 , 2, true);
 
 		int idBici = daoBici.insert(bici);
 		System.out.println("Bici creato");

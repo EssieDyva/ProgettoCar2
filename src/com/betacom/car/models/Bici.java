@@ -4,8 +4,8 @@ public class Bici extends Veicoli{
 
 	private Integer idBici;
 	private Integer numeroMarce;
-	private String tipoFreno;		// tamburo, disco, pattino
-	private String tipoSospensione;	// senza, mono, bi
+	private Integer tipoFreno;		// tamburo, disco, pattino
+	private Integer tipoSospensione;	// senza, mono, bi
 	private Boolean isPiegevole;
 	
 	public Bici() {
@@ -13,7 +13,7 @@ public class Bici extends Veicoli{
 	}
 	
 	public Bici(Integer id, String tipoVeicolo, Integer numeroRuote, Integer idAlimentazione, Integer idCategoria,
-			Integer idColore, Integer idMarca, Integer annoProduzione, String modello, Integer numeroMarce, String tipoFreno, String tipoSospensione, Boolean isPiegevole) {
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello, Integer numeroMarce, Integer tipoFreno, Integer tipoSospensione, Boolean isPiegevole) {
 		super(id, tipoVeicolo, numeroRuote, idAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
 		this.numeroMarce = numeroMarce;
 		this.tipoFreno = tipoFreno;
@@ -21,7 +21,7 @@ public class Bici extends Veicoli{
 		this.isPiegevole = isPiegevole;
 	}
 
-	public Bici(Integer idBici, Integer numeroMarce, String tipoFreno, String tipoSospensione, Boolean isPiegevole) {
+	public Bici(Integer idBici, Integer numeroMarce, Integer tipoFreno, Integer tipoSospensione, Boolean isPiegevole) {
 		super();
 		this.idBici = idBici;
 		this.numeroMarce = numeroMarce;
@@ -46,19 +46,19 @@ public class Bici extends Veicoli{
 		this.numeroMarce = numeroMarce;
 	}
 
-	public String getTipoFreno() {
+	public Integer getTipoFreno() {
 		return tipoFreno;
 	}
 
-	public void setTipoFreno(String tipoFreno) {
+	public void setTipoFreno(Integer tipoFreno) {
 		this.tipoFreno = tipoFreno;
 	}
 
-	public String getTipoSospensione() {
+	public Integer getTipoSospensione() {
 		return tipoSospensione;
 	}
 
-	public void setTipoSospensione(String tipoSospensione) {
+	public void setTipoSospensione(Integer tipoSospensione) {
 		this.tipoSospensione = tipoSospensione;
 	}
 
