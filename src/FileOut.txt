@@ -1,0 +1,1 @@
+Stampa con filtro -- key: 3 value: Macchina [numeroPorte=5, targa=hdgess, cc=125, getId()=3, getTipoVeicolo()=macchina, getNumeroRuote()=4, getTipoAlimentazione()=benzina, getCategoria()=strada, getColore()=bianco, getMarca()=fiat, getAnnoProduzione()=2006, getModello()=500]

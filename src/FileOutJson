@@ -1,0 +1,86 @@
+Stampa Json con filtro {
+  "numeroPorte": 5,
+  "targa": "hdges",
+  "cc": 125,
+  "id": 1,
+  "tipoVeicolo": "macchina",
+  "numeroRuote": 4,
+  "tipoAlimentazione": "benzina",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "fiat",
+  "annoProduzione": 2000,
+  "modello": "500"
+}
+Stampa Json con filtro {
+  "numeroPorte": 5,
+  "targa": "hdgess",
+  "cc": 125,
+  "id": 3,
+  "tipoVeicolo": "macchina",
+  "numeroRuote": 4,
+  "tipoAlimentazione": "diesel",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "renault",
+  "annoProduzione": 2006,
+  "modello": "500"
+}
+Stampa Json con filtro {
+  "numeroMarce": 6,
+  "tipoFreno": "pneu",
+  "tipoSospensione": "senza",
+  "isPiegevole": false,
+  "id": 6,
+  "tipoVeicolo": "bici",
+  "numeroRuote": 2,
+  "tipoAlimentazione": "benzina",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "fiat",
+  "annoProduzione": 2000,
+  "modello": "500"
+}
+Stampa JSON: {
+  "numeroPorte": 5,
+  "targa": "hdges",
+  "cc": 125,
+  "id": 1,
+  "tipoVeicolo": "macchina",
+  "numeroRuote": 4,
+  "tipoAlimentazione": "benzina",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "fiat",
+  "annoProduzione": 2000,
+  "modello": "500"
+}
+Stampa JSON: {
+  "numeroPorte": 5,
+  "targa": "hdgess",
+  "cc": 125,
+  "id": 3,
+  "tipoVeicolo": "macchina",
+  "numeroRuote": 4,
+  "tipoAlimentazione": "diesel",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "renault",
+  "annoProduzione": 2006,
+  "modello": "500"
+}
+Stampa JSON: {
+  "numeroMarce": 6,
+  "tipoFreno": "pneu",
+  "tipoSospensione": "senza",
+  "isPiegevole": false,
+  "id": 6,
+  "tipoVeicolo": "bici",
+  "numeroRuote": 2,
+  "tipoAlimentazione": "benzina",
+  "categoria": "strada",
+  "colore": "bianco",
+  "marca": "fiat",
+  "annoProduzione": 2000,
+  "modello": "500"
+}

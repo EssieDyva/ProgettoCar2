@@ -1,0 +1,4 @@
+alim=benzina,diesel,elettrica,ibrida,manuale
+cat=strada,fuoristrada,suv,mtb,cross
+colore=bianco,nero,verde,giallo,marrone,rosso
+marca=Fiat,Renault,BMW,Tesla,Bianchi,Yamaha,Mercedes,Tecnizer
