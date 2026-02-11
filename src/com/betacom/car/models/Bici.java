@@ -80,9 +80,5 @@ public class Bici extends Veicoli{
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
-	
-	
-	
-
 
 }

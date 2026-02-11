@@ -79,7 +79,7 @@ public class VeicoliDAO {
 		}
 		if(vei.getId() == null)
 			throw new VeicoliException("ID null");
-		query = query + "where id= ?";
+		query = query + "where id_veicolo = ?";
 		params.add(vei.getId());
 
 		Object[] paramsArray = params.toArray();

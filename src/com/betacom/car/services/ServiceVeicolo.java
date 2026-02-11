@@ -6,7 +6,6 @@ import java.util.Optional;
 import com.betacom.car.dao.VeicoliDAO;
 import com.betacom.car.exceptions.VeicoliException;
 import com.betacom.car.models.Veicoli;
-import com.betacom.car.singleton.SQLConfiguration;
 import com.betacom.car.utils.SQLManager;
 
 public class ServiceVeicolo {
@@ -19,6 +18,7 @@ public class ServiceVeicolo {
 		getAllVeicoli();
 		// getVeicoliById(null);
 		// insertVeicolo();	
+		// updateVeicolo(1);
 	}
 
 	private void listTable() throws VeicoliException {
@@ -49,6 +49,21 @@ public class ServiceVeicolo {
 			}
 		} catch (Exception e) {
 			System.err.println("Error found " + e.getMessage());
+		}
+	}
+	
+	private void updateVeicolo(int id) {
+		System.out.println("Update veicolo:");
+		Veicoli vei = new Veicoli();
+		vei.setModello("Modello modificato");
+		
+		try {
+			System.out.println("numero di righe modifcate: " + dao.update(vei));
+			Optional<Veicoli> row = dao.findById(id);
+			if (row.isPresent())
+				System.out.println(row.get());
+		} catch (Exception e) {
+			System.err.println("inserimento fallito: " + e.getMessage());
 		}
 	}
 }

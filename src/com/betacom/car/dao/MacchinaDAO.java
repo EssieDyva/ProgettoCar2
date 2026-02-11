@@ -67,7 +67,7 @@ public class MacchinaDAO {
 			throw new VeicoliException("Id non Ã¨ stato caricato");
 		
 		Object[] params = new Object[] {id};
-		String query = "delete from macchina where id macchina = ?";
+		String query = "delete from macchina where id_macchina = ?";
 		
 		return db.save(query, params);
 	}
