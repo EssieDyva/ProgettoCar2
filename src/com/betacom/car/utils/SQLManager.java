@@ -185,7 +185,7 @@ public class SQLManager {
 	/*
 	 * transform result set into map list
 	 */
-	private List<Map<String, Object>> resultsetToList(ResultSet rs) throws SQLException{
+	public List<Map<String, Object>> resultsetToList(ResultSet rs) throws SQLException{
 		ResultSetMetaData md = rs.getMetaData();	// retrieve ResultSet metadata
 		int columns = md.getColumnCount();			// retrieve table number of columns
 
@@ -194,7 +194,7 @@ public class SQLManager {
 		while(rs.next()) {
 			Map<String, Object> row = new HashMap<String, Object>();
 			for(int i=1; i<= columns;i++) {
-				row.put(md.getColumnName(i), rs.getObject(i));
+				row.put(md.getColumnLabel(i), rs.getObject(i));
 			}
 			rows.add(row);
 		}
@@ -212,7 +212,7 @@ public class SQLManager {
 
 		Map<String, Object> row = new HashMap<String, Object>();
 		for(int i=1; i<= columns;i++) {
-			row.put(md.getColumnName(i), rs.getObject(i));
+			row.put(md.getColumnLabel(i), rs.getObject(i));
 		}
 		return row;
 	}

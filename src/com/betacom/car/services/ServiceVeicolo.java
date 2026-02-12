@@ -1,6 +1,7 @@
 package com.betacom.car.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import com.betacom.car.dao.VeicoliDAO;
@@ -14,7 +15,6 @@ public class ServiceVeicolo {
 	private VeicoliDAO dao = new VeicoliDAO();
 	
 	public void executeQuery() throws VeicoliException {
-		listTable();
 		getAllVeicoli();
 		// getVeicoliById(null);
 		// insertVeicolo();	
@@ -30,7 +30,7 @@ public class ServiceVeicolo {
 		System.out.println(">>>getAllVeicoli<<<");
 		
 		try {
-			List<Veicoli> lD = dao.findAll();
+			List<String> lD = dao.findAllVeicoli();
 			lD.forEach(d -> System.out.println(d));
 
 		} catch (Exception e) {

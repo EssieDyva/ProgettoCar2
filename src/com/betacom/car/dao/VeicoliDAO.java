@@ -1,5 +1,8 @@
 package com.betacom.car.dao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -117,6 +120,56 @@ public class VeicoliDAO {
 						(Integer)row.get("id_marca"),
 						(Integer)row.get("anno_produzione"),
 						(String)row.get("modello"))).collect(Collectors.toList());
+	}
+
+	public List<String> findAllVeicoli()  throws Exception{
+		String query = (SQLConfiguration.getInstance().getQuery("query.veicoli"));
+		System.out.println(query);
+ 
+		Connection conn = SQLConfiguration.getInstance().getConnection();
+		Statement stat = conn.createStatement();
+		ResultSet rs = stat.executeQuery(query); 
+		
+		/* List<Map<String, Object>> lV = db.resultsetToList(rs);
+
+		return lV; */
+		
+		List<Map<String, Object>> lV = db.list(query);
+		return lV.stream()
+				.map(row -> (
+					"---INIZIO VEICOLO---" + "\nid_veicolo: " +
+					String.valueOf(row.get("id_veicolo")) + ", \n" +
+					"tipo_veicolo: " +
+					String.valueOf(row.get("tipo_veicolo")) + ", \n" +
+					"numero_ruote: " +
+					String.valueOf(row.get("numero_ruote")) + ", \n" +
+					"alimentazione_descrizione: " +
+					String.valueOf(row.get("alimentazione_descrizione")) + ", \n" +
+					"categoria_descrizione: " +
+					String.valueOf(row.get("categoria_descrizione")) + ", \n" +
+					"colore_descrizione: " +
+					String.valueOf(row.get("colore_descrizione")) + ", \n" +
+					"marca_descrizione: " +
+					String.valueOf(row.get("marca_descrizione")) + ", \n" +
+					"anno_produzione: " +
+					String.valueOf(row.get("anno_produzione")) + ", \n" +
+					"modello: " +
+					String.valueOf(row.get("modello")) + ", \n" +
+					"freno_descrizione: " +
+					String.valueOf(row.get("freno_descrizione")) + ", \n" +
+					"sospensione_descrizione: " +
+					String.valueOf(row.get("sospensione_descrizione")) + ", \n" +
+					"porte: " +
+					String.valueOf(row.get("porte")) + ", \n" +
+					"macchina_targa: " +
+					String.valueOf(row.get("macchina_targa")) + ", \n" +
+					"cilindreta: " +
+					String.valueOf(row.get("cilindrata")) + ", \n" +
+					"moto_targa: " +
+					String.valueOf(row.get("moto_targa")) + ", \n" +
+					"cc: " +
+					String.valueOf(row.get("cc") + "\n --- FINE VEICOLO ---\n")
+					)).collect(Collectors.toList());
 	}
 
 	public Optional<Veicoli> findById(Integer id) throws Exception {
