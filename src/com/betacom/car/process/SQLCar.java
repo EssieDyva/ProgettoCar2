@@ -1,6 +1,6 @@
 package com.betacom.car.process;
 
-import com.betacom.car.services.ServiceVeicolo;
+import com.betacom.car.services.ServiceMacchina;
 import com.betacom.car.singleton.SQLConfiguration;
 
 public class SQLCar {
@@ -11,7 +11,8 @@ public class SQLCar {
 			
 			SQLConfiguration.getInstance().getConnection();
 			System.out.println("Connection with db");
-			new ServiceVeicolo().executeQuery();
+			// new ServiceVeicolo().executeQuery();
+			new ServiceMacchina().executeTransaction();
 			// new ServiceQuery().executeQuery();
 			// new ServicesUpdate().executeUpdate();
 			// new ServicesTransaction().executeTransaction();
