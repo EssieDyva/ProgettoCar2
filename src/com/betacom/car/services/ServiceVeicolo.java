@@ -45,7 +45,7 @@ public class ServiceVeicolo {
 			if(dip.isPresent())
 				System.out.println(dip.get());
 			else {
-				System.out.println("Dipendente non trovato: " + id);
+				System.out.println("Veicolo non trovato: " + id);
 			}
 		} catch (Exception e) {
 			System.err.println("Error found " + e.getMessage());
