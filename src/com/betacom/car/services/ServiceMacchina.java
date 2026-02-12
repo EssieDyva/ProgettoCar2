@@ -59,13 +59,13 @@ public class ServiceMacchina {
 	}
 
 	private void getMacchinaById(Integer id) {
-		System.out.println(">>>getDipendenteById<<<");
+		System.out.println(">>>getMacchinaById<<<");
 		try {
 			Optional<Macchina> dip = daoM.findById(id);
 			if(dip.isPresent())
 				System.out.println(dip.get());
 			else {
-				System.out.println("Dipendente non trovato: " + id);
+				System.out.println("Macchina non trovato: " + id);
 			}
 		} catch (Exception e) {
 			System.err.println("Error found " + e.getMessage());
@@ -89,10 +89,10 @@ public class ServiceMacchina {
 	}
 
 	private void createMacchina(int idVeicolo) throws Exception {
-		System.out.println("insert into RapportoCliente*****");
-		Macchina mac = new Macchina(idVeicolo, 5, "AHFTGR", 150);
+		System.out.println("insert into Macchina*****");
+		Macchina mac = new Macchina(idVeicolo, 5, "SS884ZZ", 1500);
 
 		daoM.insert(mac);
-		System.out.println("Rapporto cliente creato");
+		System.out.println("Macchina creato");
 	}
 }

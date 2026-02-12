@@ -39,7 +39,7 @@ public class ServiceVeicolo {
 	}
 	
 	private void getVeicoliById(Integer id) {
-		System.out.println(">>>getDipendenteById<<<");
+		System.out.println(">>>getVeicoliById<<<");
 		try {
 			Optional<Veicoli> dip = dao.findById(id);
 			if(dip.isPresent())
