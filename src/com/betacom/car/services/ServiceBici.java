@@ -86,11 +86,7 @@ public class ServiceBici {
 		System.out.println("insert into Bici*****");
 		Bici bici = new Bici(idVeicolo, 6, 1 , 2, true);
 
-		int idBici = daoBici.insert(bici);
+		daoBici.insert(bici);
 		System.out.println("Bici creato");
-
-		Optional<Bici> row = daoBici.findById(idBici);
-		if(row.isEmpty()) throw new VeicoliException("Bici non trovata");
-		System.out.println(row.get());
 	}
 }

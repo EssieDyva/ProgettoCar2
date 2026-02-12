@@ -86,12 +86,8 @@ public class ServiceMoto {
 			System.out.println("insert into Moto*****");
 			Moto moto = new Moto(idVeicolo, "TRGMot", 125);
 
-			int idMoto = daoMoto.insert(moto);
+			daoMoto.insert(moto);
 			System.out.println("Moto creato");
-
-			Optional<Moto> row = daoMoto.findById(idMoto);
-			if(row.isEmpty()) throw new VeicoliException("Moto non trovata");
-			System.out.println(row.get());
 		}
 	}
 

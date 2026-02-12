@@ -16,6 +16,8 @@ public class MacchinaDAO {
 	private SQLManager db = new SQLManager();
 	
 	public int insert(Macchina mac) throws Exception {
+		String query = (SQLConfiguration.getInstance().getQuery("update.macchina.insert"));
+		System.out.println(query);
 		
 		Object [] params = new Object[] {
 				mac.getIdMacchina(),
@@ -24,10 +26,8 @@ public class MacchinaDAO {
 				mac.getCc()
 		};
 		
-		String query = (SQLConfiguration.getInstance().getQuery("update.macchina.insert"));
-		System.out.println(query);
 		
-		return db.save(query, params, true);
+		return db.save(query, params);
 	}
 	
 	public int update(Macchina mac) throws Exception {

@@ -32,7 +32,7 @@ public class ServiceMacchina {
 			int idVeicolo = createVeicolo();
 			createMacchina(idVeicolo);
 			
-			getAllMacchine();
+			//getAllMacchine();
 			db.commit();			
 		} catch (Exception e) {
 			System.err.println("Error found: " + e.getMessage());
@@ -92,11 +92,7 @@ public class ServiceMacchina {
 		System.out.println("insert into RapportoCliente*****");
 		Macchina mac = new Macchina(idVeicolo, 5, "ASDFGR", 125);
 
-		int idRapporto = daoM.insert(mac);
+		daoM.insert(mac);
 		System.out.println("Rapporto cliente creato");
-
-		Optional<Macchina> row = daoM.findById(idRapporto);
-		if(row.isEmpty()) throw new VeicoliException("Macchina non trovata");
-		System.out.println(row.get());
 	}
 }
