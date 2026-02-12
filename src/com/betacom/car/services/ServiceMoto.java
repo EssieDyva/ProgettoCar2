@@ -76,7 +76,7 @@ public class ServiceMoto {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli(null, null, null, null, null, null, null, null);
+		Veicoli vei = new Veicoli("moto", 2, 1, 2, 3, 2, 2009, "RMX");
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);

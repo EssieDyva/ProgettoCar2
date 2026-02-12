@@ -76,7 +76,7 @@ public class ServiceBici {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli(null, null, null, null, null, null, null, null);
+		Veicoli vei = new Veicoli("bici", 2, 3, 2, 1, 2, 2014, "April");
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);

@@ -76,7 +76,7 @@ public class ServiceMacchina {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli("macchina", 4, 2, 1, 1, 1, 2010, "500XL");
+		Veicoli vei = new Veicoli("macchina", 4, 2, 2, 3, 1, 2010, "500XL");
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);
@@ -90,7 +90,7 @@ public class ServiceMacchina {
 
 	private void createMacchina(int idVeicolo) throws Exception {
 		System.out.println("insert into RapportoCliente*****");
-		Macchina mac = new Macchina(idVeicolo, 5, "ASDFGR", 125);
+		Macchina mac = new Macchina(idVeicolo, 5, "AHFTGR", 150);
 
 		daoM.insert(mac);
 		System.out.println("Rapporto cliente creato");

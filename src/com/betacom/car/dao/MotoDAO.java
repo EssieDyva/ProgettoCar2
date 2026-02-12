@@ -25,7 +25,7 @@ private SQLManager db = new SQLManager();
 		String query = (SQLConfiguration.getInstance().getQuery("update.moto.insert"));
 		System.out.println(query);
 		
-		return db.save(query, params, true);
+		return db.save(query, params);
 	}
 	
 	public int update(Moto moto) throws Exception {

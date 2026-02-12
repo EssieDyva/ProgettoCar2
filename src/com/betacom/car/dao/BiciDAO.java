@@ -27,7 +27,7 @@ public class BiciDAO {
 				String query = (SQLConfiguration.getInstance().getQuery("update.bici.insert"));
 				System.out.println(query);
 				
-				return db.save(query, params, true);
+				return db.save(query, params);
 			}
 			
 			public int update(Bici bic) throws Exception {
