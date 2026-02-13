@@ -23,14 +23,15 @@ public class ServiceMacchina {
 		this.daoM = new MacchinaDAO();
 	}
 
-	public void executeTransaction() throws VeicoliException {
+	public void executeTransaction(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello, Integer numeroPorte, String targa, Integer cc) throws VeicoliException {
 		System.out.println("Begin transaction");
 		try {
 			SQLConfiguration.getInstance().setTransaction();
 			// listTable();
 			// getMacchinaById(null);
-			int idVeicolo = createVeicolo();
-			createMacchina(idVeicolo);
+			int idVeicolo = createVeicolo(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
+			createMacchina(idVeicolo, numeroPorte, targa, cc);
 			
 			//getAllMacchine();
 			db.commit();			
@@ -72,11 +73,12 @@ public class ServiceMacchina {
 		}
 	}
 
-	private int createVeicolo() throws Exception {
+	private int createVeicolo(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello) throws Exception {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli("macchina", 4, 2, 2, 3, 1, 2010, "500XL");
+		Veicoli vei = new Veicoli(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);
@@ -88,9 +90,9 @@ public class ServiceMacchina {
 		return num;
 	}
 
-	private void createMacchina(int idVeicolo) throws Exception {
+	private void createMacchina(int idVeicolo, Integer numeroPorte, String targa, Integer cc) throws Exception {
 		System.out.println("insert into Macchina*****");
-		Macchina mac = new Macchina(idVeicolo, 5, "SS884ZZ", 1500);
+		Macchina mac = new Macchina(idVeicolo, numeroPorte, targa, cc);
 
 		daoM.insert(mac);
 		System.out.println("Macchina creato");

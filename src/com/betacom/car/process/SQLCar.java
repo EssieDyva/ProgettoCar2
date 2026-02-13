@@ -14,9 +14,9 @@ public class SQLCar {
 			
 			SQLConfiguration.getInstance().getConnection();
 			System.out.println("Connection with db");
-			// new ServiceMacchina().executeTransaction();
-			// new ServiceMoto().executeQuery();
-			// new ServiceBici().executeQuery();
+			new ServiceMacchina().executeTransaction("macchina", 4, 2, 2, 3, 1, 2010, "500XL", 5, "SS884ZZ", 1500);
+			new ServiceMoto().executeQuery("moto", 2, 1, 2, 3, 2, 2009, "RMX", "TRGMot", 125);
+			new ServiceBici().executeQuery("bici", 2, 3, 2, 1, 2, 2014, "April", 6, 1, 2, true);
 			// new ServiceQuery().executeQuery();
 			// new ServicesUpdate().executeUpdate();
 			// new ServicesTransaction().executeTransaction();

@@ -23,15 +23,16 @@ public class ServiceBici {
 		this.daoBici = new BiciDAO();
 	}
 
-	public void executeQuery() throws Exception {
+	public void executeQuery(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello, Integer numeroMarce, Integer tipoFreno, Integer tipoSospensione, Boolean isPiegevole) throws Exception {
 		System.out.println("Begin transaction");
 		try {
 			SQLConfiguration.getInstance().setTransaction();
 			// listTable();
 			// getAllBici();
 			// getBiciById(null);
-			int idVeicolo = createVeicolo();
-			createBici(idVeicolo);
+			int idVeicolo = createVeicolo(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
+			createBici(idVeicolo, numeroMarce, tipoFreno, tipoSospensione, isPiegevole);
 
 			db.commit();
 		} catch (Exception e) {
@@ -72,11 +73,12 @@ public class ServiceBici {
 		}
 	}
 
-	private int createVeicolo() throws Exception {
+	private int createVeicolo(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello) throws Exception {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli("bici", 2, 3, 2, 1, 2, 2014, "April");
+		Veicoli vei = new Veicoli(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);
@@ -88,9 +90,9 @@ public class ServiceBici {
 		return num;
 	}
 
-	private void createBici(int idVeicolo) throws Exception {
+	private void createBici(int idVeicolo, Integer numeroMarce, Integer tipoFreno, Integer tipoSospensione, Boolean isPiegevole) throws Exception {
 		System.out.println("insert into Bici*****");
-		Bici bici = new Bici(idVeicolo, 6, 1, 2, true);
+		Bici bici = new Bici(idVeicolo, numeroMarce, tipoFreno, tipoSospensione, isPiegevole);
 
 		daoBici.insert(bici);
 		System.out.println("Bici creato");

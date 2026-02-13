@@ -23,15 +23,16 @@ public class ServiceMoto {
 		this.daoMoto = new MotoDAO();
 	}
 
-	public void executeQuery() throws Exception {
+	public void executeQuery(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello, String targa, Integer cc) throws Exception {
 		System.out.println("Begin transaction");
 		try {
 			SQLConfiguration.getInstance().setTransaction();
 			// listTable();
 			// getAllMoto();
 			// getMotoById(null);
-			int idVeicolo = createVeicolo();
-			createMoto(idVeicolo);
+			int idVeicolo = createVeicolo(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
+			createMoto(idVeicolo, targa, cc);
 
 			db.commit();
 		} catch (Exception e) {
@@ -72,26 +73,26 @@ public class ServiceMoto {
 		}
 	}
 
-	private int createVeicolo() throws Exception {
+	private int createVeicolo(String tipoVeicolo, Integer numeroRuote, Integer idTipoAlimentazione, Integer idCategoria,
+			Integer idColore, Integer idMarca, Integer annoProduzione, String modello) throws Exception {
 		System.out.println("Insert into veicoli:");
 		int num = 0;
 
-		Veicoli vei = new Veicoli("moto", 2, 1, 2, 3, 2, 2009, "RMX");
+		Veicoli vei = new Veicoli(tipoVeicolo, numeroRuote, idTipoAlimentazione, idCategoria, idColore, idMarca, annoProduzione, modello);
 
 		num = daoV.insert("update.veicoli.insert", vei);
 		System.out.println("Inserimento veicolo: " + num);
 
 		Optional<Veicoli> v = daoV.findById(num);
-		if (v.isEmpty())
-			throw new VeicoliException("Veicolo non trovato");
+		if (v.isEmpty()) throw new VeicoliException("Veicolo non trovato");
 		System.out.println(v.get());
 
 		return num;
 	}
 
-	private void createMoto(int idVeicolo) throws Exception {
+	private void createMoto(int idVeicolo, String targa, Integer cc) throws Exception {
 		System.out.println("insert into Moto*****");
-		Moto moto = new Moto(idVeicolo, "TRGMot", 125);
+		Moto moto = new Moto(idVeicolo, targa, cc);
 
 		daoMoto.insert(moto);
 		System.out.println("Moto creato");
